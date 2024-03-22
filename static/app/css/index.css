@@ -1,0 +1,94 @@
+.main-content-container {}
+
+header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #ECECEC;
+    width: 82vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 25px;
+}
+
+.main-content {
+    width: 82vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    padding-left: 25px;
+    margin-top: 43px;
+}
+
+.filtration-panel {
+    width: 82vw;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-title {
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.filtraition-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.filtration-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+}
+
+.filtration-input input {
+    width: 150px;
+    height: 10px;
+}
+
+.products-container {}
+
+.container-title {
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.table-labels {
+    display: flex;
+    column-gap: 50px;
+    margin-bottom: 20px;
+
+}
+
+.tabel-label {
+    width: 100px;
+}
+
+.product {
+    display: flex;
+    column-gap: 50px;
+    margin-bottom: 20px;
+}
+
+.product div {
+    width: 100px;
+}
+
+.prod-num {}
+
+.prod-title {}
+
+.prod-material {}
+
+.prod-price {}
+
+.prod-produced-by {}
+
+.prod-actions {}

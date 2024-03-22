@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+    <link rel="stylesheet" href="{% static "app/css/index.css" %}">
+
+    <link rel="stylesheet" href="{% static "app/css/main.css" %}">
+    <link rel="stylesheet" href="{% static "app/css/left-menu.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100;400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="left-menu-container">
+            <div class="logo-container">
+                <div class="logo-title">
+                    metaloprokat.ru
+                </div>
+                <div class="logo-img-container">
+                    <img class="logo-img" src="{% static "app/img/logo.png" %}" title="logo" alt="logo-img">
+                </div>
+            </div>
+            <div class="navigation-con">
+                <nav>
+                    <ul>
+                        <ul>
+                        <li class="nav-title">Навигация</li>
+
+                        {% if user.is_authenticate %}
+                        <li><a href="{% url 'account_logout' %}">Выйти</a></li>
+                        {% else %}
+                        <li><a href="{% url 'account_login' %}">Вход</a></li>
+                        <li><a href="{% url 'account_signup' %}">Регистрация</a></li>
+                        {% endif %}
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about">О компании</a></li>
+                        <li><a href="/delivery">Доставка и оплата</a></li>
+                    </ul>
+                    </ul>
+                </nav>
+            </div>
+            <div class="add-product-button-container">
+                <a href="{{ DOMAIN_URL }}/admin/app/product/add/">
+                    <button class="add-prod-bt">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                        </span> Добавить товар
+                    </button>
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="main-content-container">
+            <header>
+                Главная
+            </header>
+            <main class="main-content">
+                <div class="filtration-panel">
+                    <div class="panel-title">
+                        Фильтрация
+                    </div>
+                    <div class="filtraition-content">
+                        <div class="filtration-input">
+                            <p>По цене</p>
+                            <input type="text">
+                        </div>
+                        <div class="filtration-input">
+                            <p>По названию</p>
+                            <input type="text">
+                        </div>
+                        <div class="filtration-input">
+                            <p>Производитель</p>
+                            <input type="text">
+                        </div>
+                        <div class="filtration-button-con">
+                            <button class="filtration-bt">Фильтровать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-container">
+                    <div class="container-title">
+                        Товары
+                    </div>
+
+
+
+                    <div class="table-labels">
+                        <div class="tabel-label">№</div>
+                        <div class="tabel-label">Название</div>
+                        <div class="tabel-label">Материал</div>
+                        <div class="tabel-label">Цена</div>
+                        <div class="tabel-label">Количество</div>
+                        <div class="tabel-label">Производитель</div>
+                        <div class="tabel-label">Действия</div>
+                    </div>
+
+                    {% for product in products %}
+                        <div class="product">
+                            <div class="prod-num">{{ product.id }}</div>
+                            <div class="prod-title">{{ product.title }}</div>
+                            <div class="prod-material">{{ product.material }}</div>
+                            <div class="prod-price">{{ product.price }} руб.</div>
+                            <div class="prod-quantity">{{ product.count }} шт.</div>
+                            <div class="prod-produced-by">{{ product.produced }}</div>
+                            <div class="prod-actions">
+                            <a href="{{ DOMAIN_URL }}/admin/app/product/{{ product.id }}/change/">
+                                <button>Изменить</button>
+                            </a>
+                            <a href="{{ DOMAIN_URL }}/admin/app/product/{{ product.id }}/delete/">
+                                <button>Удалить</button>
+                            </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>
