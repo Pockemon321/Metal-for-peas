@@ -4,16 +4,15 @@
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign Up" %}
-    {% endelement %}
-    <p>
-        {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
-    </p>
     {% url 'account_signup' as action_url %}
     {% element form form=form method="post" action=action_url tags="entrance,signup" %}
         {% slot body %}
             {% csrf_token %}
+            <h1>Регистрация</h1>
+            <p>
+                Уже зарегистрированы?
+                <a href="{{ login_url }}">Войдите.</a>
+            </p>
             {% element fields form=form unlabeled=True %}
             {% endelement %}
             {% if redirect_field_value %}

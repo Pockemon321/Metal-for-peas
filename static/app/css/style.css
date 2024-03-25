@@ -1,0 +1,94 @@
+form[action="/accounts/signup/"],
+form[action="/accounts/login/"],
+form[action="/accounts/password/reset/"] {
+  max-width: 750px;
+  min-height: 600px;
+  margin-left: 80px;
+}
+form[action="/accounts/signup/"] h1,
+form[action="/accounts/login/"] h1,
+form[action="/accounts/password/reset/"] h1 {
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 50px;
+}
+form[action="/accounts/signup/"] p,
+form[action="/accounts/login/"] p,
+form[action="/accounts/password/reset/"] p {
+  margin: 15px auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 22px;
+}
+form[action="/accounts/signup/"] p input,
+form[action="/accounts/login/"] p input,
+form[action="/accounts/password/reset/"] p input {
+  width: 100%;
+  height: 55px;
+  font-size: 40px;
+  background-color: #ffa494;
+  border-radius: 20px;
+  font-size: 22px;
+  padding-left: 15px;
+}
+form[action="/accounts/signup/"] p input[type=checkbox],
+form[action="/accounts/login/"] p input[type=checkbox],
+form[action="/accounts/password/reset/"] p input[type=checkbox] {
+  margin-left: 10px;
+  width: 30px;
+  height: 25px;
+}
+form[action="/accounts/signup/"] p label,
+form[action="/accounts/login/"] p label,
+form[action="/accounts/password/reset/"] p label {
+  font-size: 22px;
+  display: none;
+}
+form[action="/accounts/signup/"] p a,
+form[action="/accounts/login/"] p a,
+form[action="/accounts/password/reset/"] p a {
+  padding-left: 5px;
+  font-size: 22px;
+  color: rgb(0, 89, 255);
+}
+form[action="/accounts/signup/"] ul,
+form[action="/accounts/login/"] ul,
+form[action="/accounts/password/reset/"] ul {
+  margin: 15px auto;
+  width: 100%;
+}
+form[action="/accounts/signup/"] ul li,
+form[action="/accounts/login/"] ul li,
+form[action="/accounts/password/reset/"] ul li {
+  list-style-type: none;
+  font-size: 16px;
+}
+form[action="/accounts/signup/"] button,
+form[action="/accounts/login/"] button,
+form[action="/accounts/password/reset/"] button {
+  transition: all 0.1s;
+  width: 100%;
+  height: 50px;
+  border-radius: 24px;
+  border: none;
+  font-size: 20px;
+  margin: 30px 0;
+  background-color: #f5f92c;
+}
+form[action="/accounts/signup/"] button:active,
+form[action="/accounts/login/"] button:active,
+form[action="/accounts/password/reset/"] button:active {
+  transform: scale(0.9);
+}
+
+form[action="/accounts/login/"] p input[type=checkbox] {
+  margin-left: 1px;
+  width: 30px;
+  height: 25px;
+}
+form[action="/accounts/login/"] p label {
+  font-size: 22px;
+  display: block;
+}/*# sourceMappingURL=style.css.map */

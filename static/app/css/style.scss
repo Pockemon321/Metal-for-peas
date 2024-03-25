@@ -1,0 +1,81 @@
+form[action="/accounts/signup/"],
+form[action="/accounts/login/"],
+form[action="/accounts/password/reset/"]{
+    max-width: 750px;
+    min-height: 600px;
+    margin-left: 80px;
+    h1{
+        font-size: 28px;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    p{
+        margin: 15px auto;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        font-size: 22px;
+
+        input{
+            width: 100%;
+            height: 55px;
+            font-size: 40px;
+            background-color: #ffa494;
+            border-radius: 20px;
+            font-size: 22px;
+            padding-left: 15px;
+        }
+        input[type="checkbox"]{
+            margin-left: 10px;
+            width:30px;
+            height: 25px;
+        }
+        label{
+            font-size: 22px;
+            display: none;
+        }
+        a{
+            padding-left: 5px;
+            font-size: 22px;
+            color: rgb(0, 89, 255);
+        }
+    }
+
+    ul{
+        margin: 15px auto;
+        width: 100%;
+        li{
+            list-style-type: none;
+            font-size: 16px;
+        }
+    }
+
+    button{
+        transition: all 0.1s;
+        width: 100%;
+        height: 50px;
+        border-radius: 24px;
+        border: none;
+        font-size: 20px;
+        margin: 30px 0;
+        background-color: #f5f92c;
+    }
+    button:active{
+        transform: scale(0.9);
+    }
+}
+
+form[action="/accounts/login/"]{
+    p{
+        input[type="checkbox"]{
+            margin-left: 1px;
+            width:30px;
+            height: 25px;
+        }
+        label{
+            font-size: 22px;
+            display: block;
+        }
+    }
+}
