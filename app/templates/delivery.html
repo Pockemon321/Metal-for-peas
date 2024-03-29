@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Доставка и оплата</title>
+    <title>Вакансии</title>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -19,12 +19,114 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100;400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+    <style>
+        .filtration-panel {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: justify;
+        }
+
+        .filtration-panel img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>
-        Страница Доставка и оплата находится в разработке
-    </h1>
+
+    <div class="main-wrapper">
+        <div class="left-menu-container">
+            <div class="logo-container">
+                <div class="logo-title">
+                    metaloprokat.ru
+                </div>
+                <div class="logo-img-container">
+                    <img class="logo-img" src="{% static "app/img/logo.png" %}" title="logo" alt="logo-img">
+                </div>
+            </div>
+            <div class="navigation-con">
+                <nav>
+                    <ul>
+                        <ul>
+                            <li class="nav-title">Навигация</li>
+
+                            {% if user.is_authenticate %}
+                            <li><a href="{% url 'account_logout' %}">Выйти</a></li>
+                            {% else %}
+                            <li><a href="{% url 'account_login' %}">Вход</a></li>
+                            <li><a href="{% url 'account_signup' %}">Регистрация</a></li>
+                            {% endif %}
+                            <li><a href="/">Главная</a></li>
+                            <li><a href="/about">О компании</a></li>
+                            <li><a href="/delivery">Вакансии</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+            </div>
+            <div class="add-product-button-container">
+                <a href="{{ DOMAIN_URL }}/admin/app/product/add/">
+                    <button class="add-prod-bt">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                        </span> Добавить товар
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-content-container">
+            <header>
+                Вакансии
+            </header>
+            <main class="main-content">
+                <div class="filtration-panel">
+                    <p>
+                        Мы ищем специалиста, который имеет опыт работы с различными видами металла и умеет работать с современным оборудованием. Также важно, чтобы кандидат имел навыки работы с чертежами и мог быстро решать возникающие проблемы.
+                    </p>
+                    <p>
+                        <strong>Обязанности:</strong><br>
+                        – Разработка и внедрение новых технологий металлообработки;<br>
+                        – Контроль качества выпускаемой продукции;<br>
+                        – Участие в проведении испытаний новых образцов;<br>
+                        – Взаимодействие с другими подразделениями компании.
+                    </p>
+                    <p>
+                        <strong>Требования:</strong><br>
+                        – Высшее образование в области металлообработки;<br>
+                        – Опыт работы на аналогичных должностях не менее 3 лет;<br>
+                        – Знание ПК на уровне опытного пользователя;<br>
+                        – Умение работать в команде.
+                    </p>
+                </div>
+                <div class="products-container">
+                    <div class="container-title"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="contact-info">
+        <h2>Контактная информация</h2>
+        <p>Номер телефона: 8 912 345 67 89</p>
+        <p>Адрес главного офиса: Москва, ул. Пушкина</p>
+        <p>Почта: abc123@gmail.com</p>
+    </div>
 
 </body>
 

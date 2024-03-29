@@ -19,6 +19,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100;400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+        <script>
+        window.onload = function () {
+            document.getElementById('filtration-button').addEventListener('click', function () {
+                // Получение значений полей фильтрации
+                var price = document.getElementById('price-filter').value;
+                var title = document.getElementById('title-filter').value;
+                var manufacturer = document.getElementById('manufacturer-filter').value;
+
+                // Отправка запроса на сервер с параметрами фильтрации
+                // Здесь нужно отправить запрос на сервер и получить отфильтрованные данные
+                // После этого можно обновить список товаров на странице
+                // Обновление списка товаров может быть выполнено с использованием AJAX или обычной перезагрузки страницы
+            });
+        };
+    </script>
+
 </head>
 
 <body>
@@ -47,7 +63,7 @@
                         {% endif %}
                         <li><a href="/">Главная</a></li>
                         <li><a href="/about">О компании</a></li>
-                        <li><a href="/delivery">Доставка и оплата</a></li>
+                        <li><a href="/delivery">Вакансии</a></li>
                     </ul>
                     </ul>
                 </nav>
@@ -125,6 +141,7 @@
                             </a>
                             </div>
                         </div>
+
                     {% endfor %}
 
                 </div>

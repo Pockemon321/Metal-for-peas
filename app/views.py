@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from Metal.settings import DOMAIN_URL
 from django.views.decorators.csrf import csrf_exempt
 from app.models import Product
@@ -29,3 +29,15 @@ def delivery(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def index(request):
+    products = Product.objects.all()
+    return render(request, 'index.html', {'products': products})
+
+def edit_product(request, product_id):
+    # Логика редактирования товара
+    return redirect('index')  # Перенаправляем на главную страницу после редактирования
+
+def delete_product(request, product_id):
+    # Логика удаления товара
+    return redirect('index')

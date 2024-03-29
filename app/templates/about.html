@@ -5,7 +5,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О компании</title>
+    <style>
+        /* Добавленные стили */
+.main-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filtration-panel {
+    max-width: 600px; /* Ширина контейнера с текстом и изображением */
+    margin: 20px; /* Отступы для разделения от других элементов */
+    text-align: justify; /* Выравнивание текста по ширине */
+}
+
+.filtration-panel img {
+    max-width: 100%; /* Изображение будет подстраиваться по ширине контейнера */
+    height: auto; /* Автоматическое вычисление высоты */
+    margin-bottom: 10px; /* Отступ после изображения */
+}
+
+        </style>
+    <title>Главная</title>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -22,9 +43,69 @@
 </head>
 
 <body>
-    <h1>
-        Страница О комании находится в разработке
-    </h1>
+
+    <div class="main-wrapper">
+        <div class="left-menu-container">
+            <div class="logo-container">
+                <div class="logo-title">
+                    metaloprokat.ru
+                </div>
+                <div class="logo-img-container">
+                    <img class="logo-img" src="{% static "app/img/logo.png" %}" title="logo" alt="logo-img">
+                </div>
+            </div>
+            <div class="navigation-con">
+                <nav>
+                    <ul>
+                        <ul>
+                        <li class="nav-title">Навигация</li>
+
+                        {% if user.is_authenticate %}
+                        <li><a href="{% url 'account_logout' %}">Выйти</a></li>
+                        {% else %}
+                        <li><a href="{% url 'account_login' %}">Вход</a></li>
+                        <li><a href="{% url 'account_signup' %}">Регистрация</a></li>
+                        {% endif %}
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/about">О компании</a></li>
+                        <li><a href="/delivery">Вакансии</a></li>
+                    </ul>
+                    </ul>
+                </nav>
+            </div>
+            <div class="add-product-button-container">
+                <a href="{{ DOMAIN_URL }}/admin/app/product/add/">
+                    <button class="add-prod-bt">
+                        <span class="material-symbols-outlined">
+                            add_circle
+                        </span> Добавить товар
+                    </button>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="main-content-container">
+            <header>
+                О компании
+            </header>
+            <main class="main-content">
+                <div class="filtration-panel">
+                    <img src="https://st44.stpulscen.ru/images/product/485/679/239_original.jpg">
+                    <div class="panel-title">
+                        Компания «Металообработка» 18 лет успешно работает на рынке металлообработки. За время своего существования компания зарекомендовала себя как надежный поставщик высококачественных металлоизделий и услуг.
+
+                        Основатели компании поставили перед собой цель создать предприятие, способное удовлетворить потребности самых разных отраслей промышленности, начиная от машиностроения и заканчивая строительством. Для этого было закуплено современное оборудование, а также привлечены опытные специалисты.
+
+                        На сегодняшний день компания «Метал-Мастер» предлагает широкий спектр услуг в области металлообработки: изготовление металлоконструкций, деталей и узлов, лазерная и плазменная резка металла, гибка и сварка, покраска и многое другое.
+                    </div>
+                </div>
+                <div class="products-container">
+                    <div class="container-title">
+                </div>
+            </main>
+        </div>
+    </div>
 
 </body>
 
